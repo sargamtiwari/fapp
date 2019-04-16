@@ -5,7 +5,7 @@ app = Flask(__name__)
 def hello_world():
  import pandas as pd
    import matplotlib.pyplot as plt
-   dfinterndata=pd.read_csv('data for Add in\interns.csv',sep=',', parse_dates=['YEAR'],index_col='YEAR')
+   dfinterndata=pd.read_csv('interns.csv',sep=',', parse_dates=['YEAR'],index_col='YEAR')
    print(dfinterndata)
    plt.plot(dfinterndata)
    train =dfinterndata[:int(0.8*(len(dfinterndata)))]
