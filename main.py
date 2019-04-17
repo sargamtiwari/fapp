@@ -1,13 +1,14 @@
 from flask import Flask
+from flask import jsonify
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
  import pandas as pd
-   import matplotlib.pyplot as plt
+   #import matplotlib.pyplot as plt
    dfinterndata=pd.read_csv('https://github.com/sargamtiwari/fapp/blob/master/interns.csv',sep=',', parse_dates=['YEAR'],index_col='YEAR')
    print(dfinterndata)
-   plt.plot(dfinterndata)
+   #plt.plot(dfinterndata)
    train =dfinterndata[:int(0.8*(len(dfinterndata)))]
    valid = dfinterndata[int(0.8*(len(dfinterndata))):]
    from statsmodels.tsa.vector_ar.var_model import VAR
